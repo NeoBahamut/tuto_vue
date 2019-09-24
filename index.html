@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .main.container {
+      padding-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="ui inverted fixed menu">
+    <div class="header item">Tuto Vue.js - Grafikart</div>
+  </div>
+  <div class="ui main container" id="app">
+    {{message}}
+    <a v-bind:href="url_link">{{link}}</a>
+  </div>
+
+  <!-- import de la lib vue.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
