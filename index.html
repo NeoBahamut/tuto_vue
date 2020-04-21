@@ -2,6 +2,8 @@
 <html>
 
 <head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css" />
   <style>
     .main.container {
       padding-top: 50px;
@@ -13,9 +15,24 @@
   <div class="ui inverted fixed menu">
     <div class="header item">Tuto Vue.js - Grafikart</div>
   </div>
-  <div class="ui main container" id="app">
-    {{message}}
+
+  <div id="app" class="ui main container">
+    {{bienvenue}}
     <a v-bind:href="url_link">{{link}}</a>
+
+    <input type="text" v-model="message">
+    <p>
+      <input type="checkbox" v-model="success">
+    </p>
+
+    <ul>
+      <li v-for="person in persons">{{person}}</li>
+    </ul>
+
+    <div class="message ui" :class="{success,error:!success}" :style="style()">
+      <i class="close icon" v-on:click="close"></i>
+      {{message}}
+    </div>
   </div>
 
   <!-- import de la lib vue.js-->
