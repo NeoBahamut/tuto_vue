@@ -1,3 +1,10 @@
+Vue.directive("salut", {
+  bind: function (el, binding, vnode) {
+    console.log(el, binding);
+    el.value = binding.value;
+  },
+});
+
 new Vue({
   el: "#app",
   data: {
@@ -12,6 +19,7 @@ new Vue({
     firstname: "Jean",
     lastname: "Delatour",
     fullname2: "",
+    coucou: "Jean",
   },
   methods: {
     close: function () {
@@ -23,6 +31,12 @@ new Vue({
       } else {
         return { background: "#FF0000" };
       }
+    },
+    demo() {
+      console.log("demo");
+    },
+    demo2() {
+      console.log("demo2");
     },
   },
   computed: {

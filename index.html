@@ -54,6 +54,15 @@
         Nom complet 2:
         <input type="text" v-model="fullname2" />
       </p>
+      <p @click="demo2">
+        <a href="http://grafikart.fr" @click.prevent.stop="demo"
+          >Démonstration</a
+        >
+      </p>
+      <p>
+        <input type="text" v-salut.a.b.c="coucou" />
+        {{coucou}}
+      </p>
     </div>
 
     <!-- import de la lib vue.js-->
