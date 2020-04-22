@@ -1,44 +1,63 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css"
+    />
+    <style>
+      .main.container {
+        padding-top: 50px;
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css" />
-  <style>
-    .main.container {
-      padding-top: 50px;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="ui inverted fixed menu">
-    <div class="header item">Tuto Vue.js - Grafikart</div>
-  </div>
-
-  <div id="app" class="ui main container">
-    {{bienvenue}}
-    <a v-bind:href="url_link">{{link}}</a>
-
-    <input type="text" v-model="message">
-    <p>
-      <input type="checkbox" v-model="success">
-    </p>
-
-    <ul>
-      <li v-for="person in persons">{{person}}</li>
-    </ul>
-
-    <div class="message ui" :class="{success,error:!success}" :style="style()">
-      <i class="close icon" v-on:click="close"></i>
-      {{message}}
+  <body>
+    <div class="ui inverted fixed menu">
+      <div class="header item">Tuto Vue.js - Grafikart</div>
     </div>
-  </div>
 
-  <!-- import de la lib vue.js-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
-  <script src="js/app.js"></script>
+    <div id="app" class="ui main container">
+      {{bienvenue}}
+      <a v-bind:href="url_link">{{link}}</a>
 
-</body>
+      <input type="text" v-model="message" />
+      <p>
+        <input type="checkbox" v-model="success" />
+      </p>
 
+      <ul>
+        <li v-for="person in persons">{{person}}</li>
+      </ul>
+
+      <div
+        class="message ui"
+        :class="{success,error:!success}"
+        :style="style()"
+      >
+        <i class="close icon" v-on:click="close"></i>
+        {{message}}
+      </div>
+
+      <input type="checkbox" v-model="success2" />
+      <input type="text" v-model="message2" />
+      {{ message2 }}
+      <!-- <div class="ui message" :class="cls()"> -->
+      <div class="ui message" :class="cls">
+        Salut les gens
+      </div>
+      <p>
+        Prénom : {{ firstname }}<br />
+        Nom : {{lastname }}<br />
+        Nom complet : <input type="text" v-model="fullname" /><br />
+        Nom complet 2:
+        <input type="text" v-model="fullname2" />
+      </p>
+    </div>
+
+    <!-- import de la lib vue.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script src="js/app.js"></script>
+  </body>
 </html>
